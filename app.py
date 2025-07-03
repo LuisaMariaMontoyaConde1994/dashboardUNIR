@@ -304,7 +304,7 @@ fig_area = px.area(df_area,
                    title='Evolución de muertes por distintas causas (1990–2017)',
                    labels={'value': 'Muertes', 'variable': 'Causa'})
 st.plotly_chart(fig_area)
-fig.write_html("dashboard.html")
+
 
 
 
