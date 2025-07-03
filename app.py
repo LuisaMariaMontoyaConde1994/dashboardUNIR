@@ -32,8 +32,8 @@ with st.expander("📄 Introducción", expanded=True):
 
 # 2. Carga de datos
 try:
-    df1 = pd.read_csv('data/causeofdeath.csv', sep=';')
-    df2 = pd.read_csv('data/annual-number-of-deaths-by-cause.csv')
+    df1 = pd.read_csv('causeofdeath.csv', sep=';')
+    df2 = pd.read_csv('annual-number-of-deaths-by-cause.csv')
     st.success("✅ Datos cargados exitosamente")
 
     # Procesar df1
