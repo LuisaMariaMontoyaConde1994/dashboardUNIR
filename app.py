@@ -16,7 +16,7 @@ st.write("Especialización en Big Data y Visual Analytics")
 st.markdown("### UNIR")
 
 # 1. Introducción
-with st.expander("📄 Introducción", expanded=True):
+with st.expander(" Introducción", expanded=True):
     st.markdown("""
     Esta aplicación demuestra el uso de diferentes bibliotecas de visualización en Python:
 
@@ -64,7 +64,7 @@ with st.expander("👁️ Vista previa de las bases de datos", expanded=False):
     st.dataframe(df2.head())
 
 # 4. Gráfico de barras con Plotly
-st.header("🌟 Visualización Interactiva con Plotly")
+st.header(" Visualización Interactiva con Plotly")
 
 if not tabla.empty:
     top10 = tabla.sort_values(by='Porcentaje_2017', ascending=False).head(10)
@@ -105,7 +105,7 @@ if not tabla.empty:
         color='Causa',
         size='Porcentaje_2017',
         text='Causa',
-        title='📈 ¿Están aumentando o disminuyendo las principales causas?',
+        title=' ¿Están aumentando o disminuyendo las principales causas?',
         labels={
             'Porcentaje_2017': 'Porcentaje de muertes (2017)',
             'Cambio_2010_2017': 'Cambio porcentual 2010–2017'
@@ -128,10 +128,10 @@ if not tabla.empty:
 else:
     st.error("❌ No se puede mostrar el gráfico de dispersión porque la tabla está vacía.")
 # ---------------------------------------------------
-# 🟣 Gráfico 3: Muertes globales por causa (2017)
+#  Gráfico 3: Muertes globales por causa (2017)
 # ---------------------------------------------------
 
-st.header("🌍 Muertes globales por causa (2017)")
+st.header(" Muertes globales por causa (2017)")
 
 # Filtrar año 2017
 muertes_2017 = df2[df2['Year'] == 2017]
@@ -159,7 +159,7 @@ fig_muertes = px.bar(
     x='Causa',
     y='Muertes',
     text='Muertes',
-    title='🌍 Muertes globales por causa (2017)',
+    title=' Muertes globales por causa (2017)',
     labels={'Muertes': 'Número de muertes', 'Causa': 'Causa'},
     color='Muertes',
     color_continuous_scale='oranges'
@@ -175,10 +175,10 @@ fig_muertes.update_layout(
 
 st.plotly_chart(fig_muertes, use_container_width=True)
 # ---------------------------------------------------
-# 🔴 Gráfico 4: Cambios porcentuales más relevantes
+#  Gráfico 4: Cambios porcentuales más relevantes
 # ---------------------------------------------------
 
-st.header("📈 Causas con mayores aumentos y disminuciones (2010–2017)")
+st.header(" Causas con mayores aumentos y disminuciones (2010–2017)")
 
 # Eliminar valores vacíos
 tabla_limpia = tabla.dropna(subset=['Cambio_2010_2017'])
@@ -200,7 +200,7 @@ fig_cambios = px.bar(
     orientation='h',
     color='Color',
     color_discrete_map={'Disminuyó': '#1f77b4', 'Aumentó': '#d62728'},
-    title='📉 Causas con Cambios Porcentuales Más Relevantes (2010–2017)',
+    title=' Causas con Cambios Porcentuales Más Relevantes (2010–2017)',
     labels={'Cambio_2010_2017': 'Cambio porcentual', 'Causa': 'Causa'}
 )
 
@@ -221,7 +221,7 @@ st.plotly_chart(fig_cambios, use_container_width=True)
 # 🌍 Mapa interactivo con selectbox
 # ---------------------------------------------------
 
-st.header("🗺️ Mapa mundial de muertes por causa (2017)")
+st.header(" Mapa mundial de muertes por causa (2017)")
 
 # Lista de columnas disponibles (puedes agregar más)
 causas_disponibles = {
@@ -247,7 +247,7 @@ fig_mapa = px.choropleth(
     locationmode='country names',
     color=columna_causa,
     hover_name='Entity',
-    title=f"🌍 Muertes por {causa_nombre} en el Mundo (2017)",
+    title=f" Muertes por {causa_nombre} en el Mundo (2017)",
     color_continuous_scale='OrRd',
     labels={columna_causa: 'Número de muertes'}
 )
